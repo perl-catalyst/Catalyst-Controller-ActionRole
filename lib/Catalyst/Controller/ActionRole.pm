@@ -26,7 +26,7 @@ extends 'Catalyst::Controller';
 
 =head1 DESCRIPTION
 
-This module allows to apply L<Moose::Role>s to the C<Catalyst::Action>s for
+This module allows one to apply L<Moose::Role>s to the C<Catalyst::Action>s for
 different controller methods.
 
 For that a C<Does> attribute is provided. That attribute takes an argument,
