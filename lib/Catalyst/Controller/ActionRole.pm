@@ -1,5 +1,5 @@
 package Catalyst::Controller::ActionRole;
-# ABSTRACT: Apply roles to action instances
+# ABSTRACT: Apply roles to action instances (DEPRECATED)
 
 use Moose;
 use Class::Load qw(load_class load_first_existing_class);
@@ -236,6 +236,12 @@ sub _parse_Does_attr {
   BUILD
 
 =end Pod::Coverage
+
+=head1 DEPRECATION NOTICE
+
+As of version C<5.90013>, L<Catalyst> has merged this functionality into the
+core L<Catalyst::Controller>.  You should no longer use it for new development
+and we'd recommend switching to the core controller as soon as practical.
 
 =cut
 
