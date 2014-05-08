@@ -2,7 +2,7 @@ package Catalyst::Controller::ActionRole;
 # ABSTRACT: Apply roles to action instances
 
 use Moose;
-use Class::MOP;
+use Class::Load qw(load_class load_first_existing_class);
 use Catalyst::Utils;
 use Moose::Meta::Class;
 use String::RewritePrefix 0.004;
@@ -139,7 +139,7 @@ has _action_roles => (
 sub _build__action_roles {
     my $self = shift;
     my @roles = $self->_expand_role_shortname($self->_action_role_args);
-    Class::MOP::load_class($_) for @roles;
+    load_class($_) for @roles;
     return \@roles;
 }
 
@@ -158,7 +158,7 @@ around create_action => sub {
     my @roles = $self->gather_action_roles(%args);
     return $self->$orig(%args) unless @roles;
 
-    Class::MOP::load_class($_) for @roles;
+    load_class($_) for @roles;
 
     my $action_class = $self->_build_action_subclass(
         $self->action_class(%args), @roles,
@@ -213,7 +213,7 @@ sub _expand_role_shortname {
     return String::RewritePrefix->rewrite(
         {
             ''  => sub {
-                my $loaded = Class::MOP::load_first_existing_class(
+                my $loaded = load_first_existing_class(
                     map { "$_$_[0]" } @prefixes
                 );
                 return first { $loaded =~ /^$_/ }
