@@ -1,4 +1,6 @@
-.*
-!.gitignore
-Catalyst-Controller-ActionRole-*
-Debian_CPANTS.txt
+/.ackrc
+/.build/
+!/.gitignore
+/.latest
+/Catalyst-Controller-ActionRole-*/
+/Catalyst-Controller-ActionRole-*.tar.gz
