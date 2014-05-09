@@ -37,7 +37,7 @@ C<::ActionRole::> is prepended. If it isn't prefixed with C<+> or C<~>,
 the role name will be searched for in C<@INC> according to the rules for
 L<role prefix searching|/ROLE PREFIX SEARCHING>.
 
-It's possible to to apply roles to B<all> actions of a controller without
+It's possible to apply roles to B<all> actions of a controller without
 specifying the C<Does> keyword in every action definition:
 
     package MyApp::Controller::Bar
