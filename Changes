@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.16      2014-05-09 00:40:08Z
   - remove use of deprecated Class::MOP functions
   - added deprecation notice to documentation -- this module only remains for
     legacy use
