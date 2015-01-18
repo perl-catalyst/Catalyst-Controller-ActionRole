@@ -241,7 +241,7 @@ sub _parse_Does_attr {
 
 As of version C<5.90013>, L<Catalyst> has merged this functionality into the
 core L<Catalyst::Controller>.  You should no longer use it for new development
-and we'd recommend switching to the core controller as soon as practical.
+and we recommend switching to the core controller as soon as practical.
 
 =cut
 
