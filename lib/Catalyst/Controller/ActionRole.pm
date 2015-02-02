@@ -149,6 +149,10 @@ sub _build__action_roles {
     return \@roles;
 }
 
+=for Pod::Coverage BUILD
+
+=cut
+
 sub BUILD {
     my $self = shift;
     # force this to run at object creation time
@@ -236,13 +240,5 @@ sub _parse_Does_attr {
     my ($self, $app, $name, $value) = @_;
     return Does => $self->_expand_role_shortname($value);
 }
-
-=begin Pod::Coverage
-
-  BUILD
-
-=end Pod::Coverage
-
-=cut
 
 1;
