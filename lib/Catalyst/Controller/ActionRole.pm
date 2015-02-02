@@ -8,8 +8,7 @@ use Moose::Meta::Class;
 use String::RewritePrefix 0.004;
 use MooseX::Types::Moose qw/ArrayRef Str RoleName/;
 use List::Util qw(first);
-
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 extends 'Catalyst::Controller';
 
