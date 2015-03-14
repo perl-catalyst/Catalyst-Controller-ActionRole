@@ -1,6 +1,8 @@
 package Catalyst::Controller::ActionRole;
 # ABSTRACT: (DEPRECATED) Apply roles to action instances
+
 our $VERSION = '0.18';
+
 use Moose;
 use Class::Load qw(load_class load_first_existing_class);
 use Catalyst::Utils;
